@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+	<!-- JP Vermeer - Angular.JS/Bootstrap/JQuery? Sample Code / Vermeer.ca/site -->
+  <head>
+    <script src="js/jquery.js"></script>
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+    <script type="text/javascript" src="js/angular.min.js"></script>
+    <script type="text/javascript" src="js/app.js"></script>
+   	<link rel="stylesheet" type="text/css" href="css/style.css" />
+   	<script>
+   	$(function() {
+		$('#chart').on("mousemove", (function(e){
+			console.log($('.chart').top);
+    		$('#breakdown').css({
+       			left:  e.pageX,
+       			top:   e.pageY-($('#chart').position().top + 50)
+    		});
+    		console.log('LFA Fires');
+		}));
+   	});
+   	</script>
+
+  </head>
+  
+  <body ng-app="vaSite"> 
+    <div ng-controller="vaSiteController as vaSite">
+	  	
+ 
+ 	  <div style="padding-left:30px;padding-right:30px">
+		<form>
+			<h1>Generalized Fibonacci Sequences and Lucas Numbers</h1>
+			The General form of Fibonacci sequences takes the form of a series of sequence of numbers.<br>
+			Each number is given by f(p, n), where p is the number of previous terms added together to the nth number in a sequence.<br>
+			<b>For instance, the fibonacci sequence would be expressed as f(2, n)</b><br>
+			For this example of recursion in Javascript/Angular3:<br>
+			<div style="display:table; margin:auto">
+				<div style="display:table-cell; margin:auto">The number of previous terms summed together for the nth term of the sequence
+				<p>p : <input type="number" ng-model="userP" ng-value="'0'"></div>
+				<div style="display:table-cell">The Number of terms generated in the sequence:
+				<p>n : <input type="number" ng-model="userN" ng-value="'0'"></p></div>
+				<div style="display:table-cell">The First number in the sequence:
+				<p>A : <input type="number" ng-model="userA"></p></div>
+				<div style="display:table-cell">The Second number in the sequence:
+				<p>B : <input type="number" ng-model="userB"></p></div>
+			</div>
+			<div style="display:table; margin:auto; width:100%">
+				<div style="display: table-cell; padding:20px;" class="class1">Terms Equal 2^n-1</div>
+				<div style="display: table-cell; padding:20px;" class="class2">Terms Equal 2^n-1 - 1 Chebyshev(n-((p+1)*i)+(i-1), i)</div>
+				<div style="display: table-cell; padding:20px;" class="class3">Terms Equal 2^n-1 -/+ 2 Chebyshev(n-((p+1)*i)+(i-1), i)</div>
+				<div style="display: table-cell; padding:20px;" class="class4">Terms Equal 2^n-1 -/+ 3 Chebyshev(n-((p+1)*i)+(i-1), i)</div>
+				<div style="display: table-cell; padding:20px;" class="class5">Terms Equal 2^n-1 -/+ 4 Chebyshev(n-((p+1)*i)+(i-1), i)</div>
+				<div style="display: table-cell; padding:20px;" class="class6">Terms Equal 2^n-1 -/+ 5 Chebyshev(n-((p+1)*i)+(i-1), i)</div>
+				<div style="display: table-cell; padding:20px;" class="class7">Terms Equal 2^n-1 -/+ 6 Chebyshev(n-((p+1)*i)+(i-1), i)</div>
+				<div style="display: table-cell; padding:20px;" class="class8">Terms Equal 2^n-1 -/+ 7 Chebyshev(n-((p+1)*i)+(i-1), i)</div>
+				<div style="display: table-cell; padding:20px;" class="class9">Terms Equal 2^n-1 -/+ 8 Chebyshev(n-((p+1)*i)+(i-1), i)</div>
+			</div>
+			
+			<div id="chart">	
+				<div style="display:table-cell">
+					<div class="axis">f(p,n)</div>  					
+					<div class="axis" data-ng-repeat="k in vaSite.getRange(1,userN || 5)">
+  						{{k}}
+  					</div>
+  				</div>
+				<div data-ng-repeat="j in vaSite.getRange(1, userP || 5)" style="display:table-cell;">
+				
+  					<div class="axis">{{j}}</div>
+					
+					<div ng-mouseover="vaSite.showCell(j, i)" class="chart basedata class{{vaSite.getOrder(j, i)}}" data-ng-repeat="i in vaSite.getRange(1,userN || 5)">
+  							
+  						{{vaSite.smartGib(j, i, userA || 1, userB || 1)}}
+							
+					</div>
+				
+				<p>
+
+			</div>
+			
+			<div id="breakdown" style="border-color:#fff; border-style: solid;border-width: 5px;position:absolute; z-index:100; width: 300px;"><b>f({{vaSite.activeP}}, {{vaSite.activeN}})</b><br>{{vaSite.functionString}}<br>{{vaSite.valueString}}</div>
+			
+					
+					
+					
+					
+					
+					
+					
+					
+		</form>
+ 	  </div>
+ 
+  
+    </div>
+  </body>
+</html>

@@ -1,0 +1,25 @@
+<!-- Tabs Go Here -->
+<section>
+  <ul class="nav nav-pills">
+   <li ng-class="{ active:tab.isSet(1) }">
+      <a href ng-click="tab.setTab(1)">History</a>
+    </li>
+    <li ng-class="{ active:tab.isSet(2) }">
+      <a href ng-click="tab.setTab(2)">Latest</a>
+    </li>
+    <li ng-class="{ active:tab.isSet(3) }">
+      <a href="#" ng-click="tab.setTab(3);">Future</a>
+    </li>
+  </ul>
+
+  <!--  Past Tab's Content  -->
+  <concept-past ng-show="tab.isSet(1)"></concept-past>
+
+  <!--  Present Tab's Content  -->
+  <div concept-present ng-show="tab.isSet(2)"></div>
+
+  <!--  Future Tab's Content  -->
+  <concept-future ng-show="tab.isSet(3)"></concept-future>
+  
+</section>
+			
