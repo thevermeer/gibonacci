@@ -16,40 +16,33 @@
 
 .class1, .class8 {
     background-color : green !important;
-    color: #fff;
-    padding: 5px;
+
 }
 
 .class2, .class9 {
     background-color : #036 !important;
-    color: #fff;
-    padding: 5px;
+
 }
 
 .class3, .class10 {
     background-color : #369 !important;
-    color: #fff;
-    padding: 5px;
+
 }
 .class4, .class11 {
     background-color : #69C !important;
-    color: #fff;
-    padding: 5px;
+
 }
 .class5, .class12 {
     background-color : #693 !important;
-    color: #fff;
-    padding: 5px;
+
 }
 .class6, .class13 {
     background-color : #963 !important;
-    color: #fff;
-    padding: 5px;
+
 }
 .class7, .class14 {
     background-color : #C96 !important;
-    color: #fff;
-    padding: 5px;
+
 }
 .axis {
     background-color : #000;
@@ -58,15 +51,22 @@
 }
 
 #breakdown{
-	background-color: #fff;
+	background-color: #000;
 	border: 2px !important;
 	border-color: #fff !important;
+	color : #fff !important;
 }
 
+.legend {
+
+	color : #FFF;
+}
 
 .basedata {
 
     padding: 5px;
+    color: #fff;
+    background-color:#000;
 }
 
 body{
