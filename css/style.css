@@ -14,36 +14,77 @@
 --------------------------*/
 
 
-.class1, .class8 {
+.class1 {
     background-color : green !important;
 
 }
 
-.class2, .class9 {
-    background-color : #036 !important;
+.class2 {
+    background-color : #024 !important;
 
 }
 
-.class3, .class10 {
-    background-color : #369 !important;
+.class3 {
+    background-color : #246 !important;
 
 }
-.class4, .class11 {
-    background-color : #69C !important;
+.class4 {
+    background-color : #468 !important;
 
 }
-.class5, .class12 {
-    background-color : #693 !important;
+.class5 {
+    background-color : #68A !important;
 
 }
-.class6, .class13 {
-    background-color : #963 !important;
+.class6 {
+    background-color : #8AC !important;
 
 }
-.class7, .class14 {
-    background-color : #C96 !important;
+.class7 {
+    background-color : #ACE !important;
 
 }
+
+.class8 {
+    background-color : #CEF !important;
+
+}
+
+.class9 {
+    background-color : #FCE !important;
+
+}
+
+.class10 {
+    background-color : #EAC !important;
+
+}
+
+.class11 {
+    background-color : #C9A !important;
+
+}
+.class12 {
+    background-color : #A79 !important;
+
+}
+.class13 {
+    background-color : #957 !important;
+
+}
+.class14 {
+    background-color : #735 !important;
+
+}
+.class15 {
+    background-color : #513 !important;
+
+}
+.class16 {
+    background-color : #301 !important;
+
+}
+
 .axis {
     background-color : #000;
     color: #fff;
