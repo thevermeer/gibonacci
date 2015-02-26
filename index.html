@@ -9,9 +9,9 @@
     <script type="text/javascript" src="js/app.js"></script>
    	<link rel="stylesheet" type="text/css" href="css/style.css" />
   </head>
-  <body ng-app="vaSite"> 
-    <div ng-controller="vaSiteController as vaSite">
- 	  <div>
+  <body ng-app="gibonacci"> 
+    <div ng-controller="gibonacciController as gib">
+ 	  <div id="site">
 		<form>
 			<h1>Generalized Fibonacci Sequences and Lucas Numbers</h1>
 			The General form of Fibonacci sequences takes the form of a series of sequence of numbers.<br>
@@ -30,29 +30,29 @@
 			</div>
 			<div id="legendGroup">
 				<div class="class1 legend">Terms Equal 2^n-1</div>
-				<div ng-repeat="k in vaSite.getRange(2, userN || 1)" class="class{{k}} legend">Terms Equal 2^n-1 - 1 Chebyshev(n-((p+1)*i)+(i-1), i)</div>
+				<div ng-repeat="k in gib.getRange(2, ((userN / 2) + 1)  || 1)" class="class{{k}} legend"> - Chebyshev(n-({{k}}p+{{2*k-1}}), {{k}})</div>
 			</div>
 			<div id="chart">	
 				<div style="display:table-cell">
 					<div class="axis">f(p,n)</div>  					
-					<div class="axis" data-ng-repeat="k in vaSite.getRange(1,userN || 1)">
+					<div class="axis" data-ng-repeat="k in gib.getRange(1,userN || 1)">
   						{{k}}
   					</div>
   				</div>
-				<div data-ng-repeat="j in vaSite.getRange(1, userP || 1)" style="display:table-cell;">
+				<div data-ng-repeat="j in gib.getRange(1, userP || 1)" style="display:table-cell;">
   					<div class="axis">{{j}}</div>
-					<div ng-mouseover="vaSite.showCell(j, i)" class="chart basedata class{{vaSite.getOrder(j, i)}}" data-ng-repeat="i in vaSite.getRange(1,userN || 1)">
-  						<span ng-bind="vaSite.smartGib(j, i, userA || 1, userB || 1)"></span>		
+					<div ng-mouseover="gib.showCell(j, i)" class="chart basedata class{{gib.getOrder(j, i)}}" data-ng-repeat="i in gib.getRange(1,userN || 1)">
+  						<span ng-bind="gib.smartGib(j, i, userA || 1, userB || 1)"></span>		
 					</div>
 				<p>
 			</div>
 			
 			<div id="breakdown" style="border-color:#fff; border-style: solid;border-width: 5px;position:absolute; z-index:100; width: 300px;">
-				<b>f(<span ng-bind="vaSite.activeP"></span>, <span ng-bind="vaSite.activeN"></span>)</b>
+				<b>f(<span ng-bind="gib.activeP"></span>, <span ng-bind="gib.activeN"></span>)</b>
 				<br>
-				<span ng-bind="vaSite.functionString"></span>
+				<span ng-bind="gib.functionString"></span>
 				<br>
-				<span ng-bind="vaSite.valueString"></span>
+				<span ng-bind="gib.valueString"></span>
 			</div>			
 		</form>
  	  </div>

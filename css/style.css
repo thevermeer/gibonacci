@@ -3,6 +3,9 @@
 	padding:0;
 }
 
+#site{
+	padding: 50px;
+}
 
 .axis {
     background-color : #000;

@@ -5,7 +5,7 @@
 // Angular Module Namespace Declaration
 // ['site-directives'] injects dependency for definition from siteDOM.js, included in index.html 
 (function() {
-  var app = angular.module('vaSite', []);
+  var app = angular.module('gibonacci', []);
 
   	
 
@@ -17,7 +17,7 @@
 
 
 	//Root controller for the site/application
-   app.controller('vaSiteController', function(){
+   app.controller('gibonacciController', function(){
    	
    	this.arrValues = [];
    	this.a = 0;
@@ -138,14 +138,14 @@
     		return iReturn;
     	}
     };
-  }); //end vaSiteController
+  }); //end gibonacciController
 
 
 })();
 
 
 /// JQuery App Start
-   	$(function() {
+	$(function() {
 		// Delegates the event handler for mousemove on the #chart div
 		$('#chart').on("mousemove", (function(e){
     		//Moves the breakdown div to the mouse position
