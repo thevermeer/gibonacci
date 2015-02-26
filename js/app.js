@@ -144,3 +144,15 @@
 })();
 
 
+/// JQuery App Start
+   	$(function() {
+		// Delegates the event handler for mousemove on the #chart div
+		$('#chart').on("mousemove", (function(e){
+    		//Moves the breakdown div to the mouse position
+    		$('#breakdown').css({
+       			left:  e.pageX,
+       			top:   e.pageY-($('#chart').position().top + 50)
+    		});
+		}));
+   	});
+

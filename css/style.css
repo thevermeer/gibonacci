@@ -1,160 +1,7 @@
-/*-------------------------
-	Simple reset
---------------------------*/
-
-
 *{
 	margin:0;
 	padding:0;
 }
-
-
-/*-------------------------
-	General Styles
---------------------------*/
-
-
-.class1 {
-    background-color : green !important;
-
-}
-
-.class2 {
-    background-color : #024 !important;
-
-}
-
-.class3 {
-    background-color : #246 !important;
-
-}
-.class4 {
-    background-color : #468 !important;
-
-}
-.class5 {
-    background-color : #68A !important;
-
-}
-.class6 {
-    background-color : #8AC !important;
-
-}
-.class7 {
-    background-color : #ACE !important;
-
-}
-
-.class8 {
-    background-color : #CEF !important;
-
-}
-
-.class9 {
-    background-color : #FCE !important;
-
-}
-
-.class10 {
-    background-color : #EAC !important;
-
-}
-
-.class11 {
-    background-color : #C9A !important;
-
-}
-.class12 {
-    background-color : #A79 !important;
-
-}
-.class13 {
-    background-color : #957 !important;
-
-}
-.class14 {
-    background-color : #735 !important;
-
-}
-.class15 {
-    background-color : #513 !important;
-
-}
-.class16 {
-    background-color : #301 !important;
-
-}
-
-.class17 {
-    background-color : #100 !important;
-
-}
-.class18 {
-    background-color : #200 !important;
-
-}
-.class19 {
-    background-color : #300 !important;
-
-}
-.class20 {
-    background-color : #400 !important;
-
-}
-.class21 {
-    background-color : #500 !important;
-
-}
-.class22 {
-    background-color : #600 !important;
-
-}
-.class23 {
-    background-color : #700 !important;
-
-}
-.class24 {
-    background-color : #800 !important;
-
-}
-.class25 {
-    background-color : #900 !important;
-
-}
-.class26 {
-    background-color : #A00 !important;
-
-}
-.class27 {
-    background-color : #b00 !important;
-
-}
-.class28 {
-    background-color : #c00 !important;
-
-}
-.class29 {
-    background-color : #d00 !important;
-
-}
-.class30 {
-    background-color : #e00 !important;
-
-}
-.class31 {
-    background-color : #f00 !important;
-
-}
-
-
-
-
-
-
-
-
-
-
 
 
 .axis {
@@ -170,9 +17,16 @@
 	color : #fff !important;
 }
 
-.legend {
+#legendGroup{
+	display:table; 
+	margin:auto; 
+	width:100%;
+}
 
+.legend {
 	color : #FFF;
+	display: table-cell; 
+	padding:20px;
 }
 
 .basedata {
@@ -474,8 +328,141 @@ a {
     -webkit-animation-delay: .1s;
   }
 
-/*-----------------------------------*\
-  $ANIMATIONS
-\*-----------------------------------*/
+/*-------------------------
+	General Styles
+--------------------------*/
+
+
+.class1 {
+    background-color : green !important;
+
+}
+
+.class2 {
+    background-color : #024 !important;
+
+}
+
+.class3 {
+    background-color : #246 !important;
+
+}
+.class4 {
+    background-color : #468 !important;
+
+}
+.class5 {
+    background-color : #68A !important;
+
+}
+.class6 {
+    background-color : #8AC !important;
+
+}
+.class7 {
+    background-color : #ACE !important;
+
+}
+
+.class8 {
+    background-color : #CEF !important;
+
+}
+
+.class9 {
+    background-color : #FCE !important;
+
+}
+
+.class10 {
+    background-color : #EAC !important;
+
+}
+
+.class11 {
+    background-color : #C9A !important;
+
+}
+.class12 {
+    background-color : #A79 !important;
+
+}
+.class13 {
+    background-color : #957 !important;
+
+}
+.class14 {
+    background-color : #735 !important;
+
+}
+.class15 {
+    background-color : #513 !important;
+
+}
+.class16 {
+    background-color : #301 !important;
+
+}
+
+.class17 {
+    background-color : #100 !important;
+
+}
+.class18 {
+    background-color : #200 !important;
+
+}
+.class19 {
+    background-color : #300 !important;
+
+}
+.class20 {
+    background-color : #400 !important;
+
+}
+.class21 {
+    background-color : #500 !important;
+
+}
+.class22 {
+    background-color : #600 !important;
+
+}
+.class23 {
+    background-color : #700 !important;
+
+}
+.class24 {
+    background-color : #800 !important;
+
+}
+.class25 {
+    background-color : #900 !important;
+
+}
+.class26 {
+    background-color : #A00 !important;
+
+}
+.class27 {
+    background-color : #b00 !important;
+
+}
+.class28 {
+    background-color : #c00 !important;
+
+}
+.class29 {
+    background-color : #d00 !important;
+
+}
+.class30 {
+    background-color : #e00 !important;
+
+}
+.class31 {
+    background-color : #f00 !important;
+
+}
 
 

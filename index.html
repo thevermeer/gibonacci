@@ -1,32 +1,17 @@
 <!DOCTYPE html>
 <html>
-	<!-- JP Vermeer - Angular.JS/Bootstrap/JQuery? Sample Code / Vermeer.ca/site -->
+	<!-- JP Vermeer - Angular.JS Demo of Gibonacci & Gucas Numbers -->
+	<!-- Towards a demonstration of recursice optimization through the use of JS arrays and set notation -->
   <head>
     <script src="js/jquery.js"></script>
     <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
     <script type="text/javascript" src="js/angular.min.js"></script>
     <script type="text/javascript" src="js/app.js"></script>
    	<link rel="stylesheet" type="text/css" href="css/style.css" />
-   	<script>
-   	$(function() {
-		$('#chart').on("mousemove", (function(e){
-			console.log($('.chart').top);
-    		$('#breakdown').css({
-       			left:  e.pageX,
-       			top:   e.pageY-($('#chart').position().top + 50)
-    		});
-    		console.log('LFA Fires');
-		}));
-   	});
-   	</script>
-
   </head>
-  
   <body ng-app="vaSite"> 
     <div ng-controller="vaSiteController as vaSite">
-	  	
- 
- 	  <div style="padding-left:30px;padding-right:30px">
+ 	  <div>
 		<form>
 			<h1>Generalized Fibonacci Sequences and Lucas Numbers</h1>
 			The General form of Fibonacci sequences takes the form of a series of sequence of numbers.<br>
@@ -43,53 +28,34 @@
 				<div style="display:table-cell">The Second number in the sequence:
 				<p>B : <input type="number" ng-model="userB"></p></div>
 			</div>
-			<div style="display:table; margin:auto; width:100%">
-				<div style="display: table-cell; padding:20px;" class="class1 legend">Terms Equal 2^n-1</div>
-				<div style="display: table-cell; padding:20px;" class="class2 legend">Terms Equal 2^n-1 - 1 Chebyshev(n-((p+1)*i)+(i-1), i)</div>
-				<div style="display: table-cell; padding:20px;" class="class3 legend">Terms Equal 2^n-1 -/+ 2 Chebyshev(n-((p+1)*i)+(i-1), i)</div>
-				<div style="display: table-cell; padding:20px;" class="class4 legend">Terms Equal 2^n-1 -/+ 3 Chebyshev(n-((p+1)*i)+(i-1), i)</div>
-				<div style="display: table-cell; padding:20px;" class="class5 legend">Terms Equal 2^n-1 -/+ 4 Chebyshev(n-((p+1)*i)+(i-1), i)</div>
-				<div style="display: table-cell; padding:20px;" class="class6 legend">Terms Equal 2^n-1 -/+ 5 Chebyshev(n-((p+1)*i)+(i-1), i)</div>
-				<div style="display: table-cell; padding:20px;" class="class7 legend">Terms Equal 2^n-1 -/+ 6 Chebyshev(n-((p+1)*i)+(i-1), i)</div>
-				<div style="display: table-cell; padding:20px;" class="class8 legend">Terms Equal 2^n-1 -/+ 7 Chebyshev(n-((p+1)*i)+(i-1), i)</div>
-				<div style="display: table-cell; padding:20px;" class="class9 legend">Terms Equal 2^n-1 -/+ 8 Chebyshev(n-((p+1)*i)+(i-1), i)</div>
+			<div id="legendGroup">
+				<div class="class1 legend">Terms Equal 2^n-1</div>
+				<div ng-repeat="k in vaSite.getRange(2, userN || 1)" class="class{{k}} legend">Terms Equal 2^n-1 - 1 Chebyshev(n-((p+1)*i)+(i-1), i)</div>
 			</div>
-			
 			<div id="chart">	
 				<div style="display:table-cell">
 					<div class="axis">f(p,n)</div>  					
-					<div class="axis" data-ng-repeat="k in vaSite.getRange(1,userN || 5)">
+					<div class="axis" data-ng-repeat="k in vaSite.getRange(1,userN || 1)">
   						{{k}}
   					</div>
   				</div>
-				<div data-ng-repeat="j in vaSite.getRange(1, userP || 5)" style="display:table-cell;">
-				
+				<div data-ng-repeat="j in vaSite.getRange(1, userP || 1)" style="display:table-cell;">
   					<div class="axis">{{j}}</div>
-					
-					<div ng-mouseover="vaSite.showCell(j, i)" class="chart basedata class{{vaSite.getOrder(j, i)}}" data-ng-repeat="i in vaSite.getRange(1,userN || 5)">
-  							
-  						{{vaSite.smartGib(j, i, userA || 1, userB || 1)}}
-							
+					<div ng-mouseover="vaSite.showCell(j, i)" class="chart basedata class{{vaSite.getOrder(j, i)}}" data-ng-repeat="i in vaSite.getRange(1,userN || 1)">
+  						<span ng-bind="vaSite.smartGib(j, i, userA || 1, userB || 1)"></span>		
 					</div>
-				
 				<p>
-
 			</div>
 			
-			<div id="breakdown" style="border-color:#fff; border-style: solid;border-width: 5px;position:absolute; z-index:100; width: 300px;"><b>f({{vaSite.activeP}}, {{vaSite.activeN}})</b><br>{{vaSite.functionString}}<br>{{vaSite.valueString}}</div>
-			
-					
-					
-					
-					
-					
-					
-					
-					
+			<div id="breakdown" style="border-color:#fff; border-style: solid;border-width: 5px;position:absolute; z-index:100; width: 300px;">
+				<b>f(<span ng-bind="vaSite.activeP"></span>, <span ng-bind="vaSite.activeN"></span>)</b>
+				<br>
+				<span ng-bind="vaSite.functionString"></span>
+				<br>
+				<span ng-bind="vaSite.valueString"></span>
+			</div>			
 		</form>
  	  </div>
- 
-  
     </div>
   </body>
 </html>
