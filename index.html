@@ -30,13 +30,13 @@
 			</div>
 			<div id="legendGroup">
 				<div class="class1 legend">Terms Equal 2^n-1</div>
-				<div ng-repeat="k in gib.getRange(2, ((userN / 2) + 1)  || 1)" class="class{{k}} legend"> - Chebyshev(n-({{k}}p+{{2*k-1}}), {{k}})</div>
+				<div ng-repeat="k in gib.getRange(2, ((userN / 2) + 1)  || 1)" class="class{{k}} legend"> - Chebyshev(n-(<span ng-bind="k"></span>p+<span ng-bind="2*k-1"></span>), <span ng-bind="k"></span>)</div>
 			</div>
 			<div id="chart">	
 				<div style="display:table-cell">
 					<div class="axis">f(p,n)</div>  					
 					<div class="axis" data-ng-repeat="k in gib.getRange(1,userN || 1)">
-  						{{k}}
+  						<span ng-bind="k"></span>
   					</div>
   				</div>
 				<div data-ng-repeat="j in gib.getRange(1, userP || 1)" style="display:table-cell;">
