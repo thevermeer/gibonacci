@@ -39,7 +39,7 @@
   						<span ng-bind="k"></span>
   					</div>
   				</div>
-				<div data-ng-repeat="j in gib.getRange(1, userP || 1)" style="display:table-cell;">
+				<div data-ng-repeat="j in gib.getRange(1, userP || 1)" style="display:table-cell; cursor:pointer;">
   					<div class="axis">{{j}}</div>
 					<div ng-mouseover="gib.showCell(j, i)" class="chart basedata class{{gib.getOrder(j, i)}}" data-ng-repeat="i in gib.getRange(1,userN || 1)">
   						<span ng-bind="gib.smartGib(j, i, userA || 1, userB || 1)"></span>		
@@ -47,7 +47,7 @@
 				<p>
 			</div>
 			
-			<div id="breakdown" style="border-color:#fff; border-style: solid;border-width: 5px;position:absolute; z-index:100; width: 300px;">
+			<div id="breakdown" style="cursor:pointer; border-color:#fff; border-style: solid;border-width: 5px;position:absolute; z-index:100; width: 300px;">
 				<b>f(<span ng-bind="gib.activeP"></span>, <span ng-bind="gib.activeN"></span>)</b>
 				<br>
 				<span ng-bind="gib.functionString"></span>
